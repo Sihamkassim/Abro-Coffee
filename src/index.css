@@ -4,7 +4,7 @@
 
 :root {
   /* Light Mode - Coffee Shop Theme */
-  
+
   --color-bg-primary: #F8F2E1;
   --color-bg-secondary: #EDE6D3;
   --color-bg-card: #FFFFFF;
@@ -41,4 +41,67 @@
 
 * {
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-hover);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-color: var(--color-accent) var(--color-bg-primary);
+  scrollbar-width: thin;
+}
+
+/* Custom text selection */
+::selection {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+::-moz-selection {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+/* Focus styles for better accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Input and textarea styling */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent) / 10%;
+}
+
+/* Smooth animations on page load */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
