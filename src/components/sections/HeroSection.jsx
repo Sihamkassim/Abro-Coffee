@@ -12,7 +12,7 @@ export default function HeroSection() {
         className="absolute inset-0 z-0"
       >
         <img
-          src="/hero section background.png"
+          src="/hero home (1).png"
           alt=""
           className="w-full h-full object-cover"
         />
@@ -33,7 +33,7 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Brown Line Overlay (z-15) */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, scaleY: 0 }}
         animate={{ opacity: 1, scaleY: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
@@ -44,7 +44,7 @@ export default function HeroSection() {
           alt=""
           className="h-full w-full object-cover"
         />
-      </motion.div>
+      </motion.div> */}
 
       {/* Content (z-20) */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
