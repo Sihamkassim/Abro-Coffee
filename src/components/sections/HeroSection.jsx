@@ -3,7 +3,7 @@ import Button from "../common/Button";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden rounded-b-3xl">
+    <section className="relative min-h-screen flex items-center overflow-hidden rounded-b-3xl pt-20">
       {/* Hero Section Background - Ultimate Background (z-0) */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -32,44 +32,30 @@ export default function HeroSection() {
         />
       </motion.div>
 
-      {/* Brown Line Overlay (z-15) */}
-      {/* <motion.div
-        initial={{ opacity: 0, scaleY: 0 }}
-        animate={{ opacity: 1, scaleY: 1 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="absolute right-[30%] top-0 h-full w-20 z-15 hidden lg:block"
-      >
-        <img
-          src="/Brown line.png"
-          alt=""
-          className="h-full w-full object-cover"
-        />
-      </motion.div> */}
-
       {/* Content (z-20) */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 w-full">
         <div className="max-w-lg">
           {/* Welcome Text */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-8"
+            className="mb-6 sm:mb-8"
           >
-            <div className="flex flex-wrap items-baseline gap-x-3">
-              <span className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-button tracking-tight">
+            <div className="flex flex-wrap items-baseline gap-x-2 sm:gap-x-3">
+              <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-button tracking-tight">
                 WELCOME
               </span>
-              <span className="text-5xl sm:text-6xl lg:text-7xl font-light text-button">,</span>
+              <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-button">,</span>
             </div>
-            <div className="flex items-center gap-3 mt-1">
-              <span className="text-4xl sm:text-5xl lg:text-6xl font-bold text-button tracking-tight italic">
+            <div className="flex items-center gap-2 sm:gap-3 mt-1">
+              <span className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-button tracking-tight italic">
                 ABRO
               </span>
               <img
                 src="/Abro Logo.png"
                 alt=""
-                className="h-14 sm:h-16 lg:h-20 w-auto"
+                className="h-10 sm:h-14 md:h-16 lg:h-20 w-auto"
               />
             </div>
           </motion.div>
@@ -78,7 +64,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-base sm:text-lg text-button/95 mb-3 max-w-sm leading-relaxed font-medium"
+            className="text-sm sm:text-base md:text-lg text-button/95 mb-2 sm:mb-3 max-w-sm leading-relaxed font-medium"
           >
             Where friendship became vision, and coffee became the beginning of something greater.
           </motion.p>
@@ -87,7 +73,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-sm sm:text-base text-button/85 mb-10 max-w-sm"
+            className="text-xs sm:text-sm md:text-base text-button/85 mb-6 sm:mb-10 max-w-sm"
           >
             Crafted with passion, culture, and ambition.
           </motion.p>
@@ -97,7 +83,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <Button to="/menu" variant="primary" size="lg" className="px-12 font-semibold tracking-wide">
+            <Button to="/menu" variant="primary" size="lg" className="px-8 sm:px-12 font-semibold tracking-wide">
               ORDER NOW
             </Button>
           </motion.div>
@@ -109,7 +95,7 @@ export default function HeroSection() {
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="absolute right-[5%] lg:right-[8%] top-1/2 -translate-y-1/2 z-30 w-[35%] lg:w-[30%] max-w-sm pointer-events-none"
+        className="absolute right-0 sm:right-[5%] lg:right-[8%] top-1/2 -translate-y-1/2 z-30 w-[50%] sm:w-[35%] lg:w-[30%] max-w-sm pointer-events-none hidden sm:block"
       >
         <img
           src="/Coffee mug.png"

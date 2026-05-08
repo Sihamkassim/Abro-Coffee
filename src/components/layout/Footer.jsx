@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 export default function Footer() {
   return (
     <footer className="bg-bg-secondary border-t border-border-theme">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -13,21 +13,20 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
               <img
                 src="/Abro Logo.png"
                 alt="Abro Coffee"
-                className="h-10 w-auto"
+                className="h-8 sm:h-10 w-auto"
               />
               <img
                 src="/abro title.png"
                 alt="Abro"
-                className="h-5 w-auto"
+                className="h-4 sm:h-5 w-auto"
               />
             </div>
-            <p className="text-text-secondary text-sm max-w-xs">
-              Experience the rich flavors of Ethiopian coffee. Crafted with
-              passion, served with love.
+            <p className="text-text-secondary text-xs sm:text-sm max-w-xs leading-relaxed">
+              Experience the rich flavors of Ethiopian coffee. Crafted with passion, served with love.
             </p>
           </motion.div>
 
@@ -38,12 +37,12 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h4 className="font-semibold text-text-primary mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="font-semibold text-text-primary mb-3 sm:mb-4 text-sm sm:text-base">Quick Links</h4>
+            <ul className="space-y-1.5 sm:space-y-2">
               <li>
                 <Link
                   to="/"
-                  className="text-text-secondary hover:text-accent transition-colors text-sm"
+                  className="text-text-secondary hover:text-accent transition-colors text-xs sm:text-sm"
                 >
                   Home
                 </Link>
@@ -51,7 +50,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/menu"
-                  className="text-text-secondary hover:text-accent transition-colors text-sm"
+                  className="text-text-secondary hover:text-accent transition-colors text-xs sm:text-sm"
                 >
                   Menu
                 </Link>
@@ -59,7 +58,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/about"
-                  className="text-text-secondary hover:text-accent transition-colors text-sm"
+                  className="text-text-secondary hover:text-accent transition-colors text-xs sm:text-sm"
                 >
                   About Us
                 </Link>
@@ -74,13 +73,13 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h4 className="font-semibold text-text-primary mb-4">
+            <h4 className="font-semibold text-text-primary mb-3 sm:mb-4 text-sm sm:text-base">
               Get in Touch
             </h4>
-            <ul className="space-y-2 text-text-secondary text-sm">
-              <li className="flex items-center gap-2">
+            <ul className="space-y-1.5 sm:space-y-2 text-text-secondary text-xs sm:text-sm">
+              <li className="flex items-start gap-2">
                 <svg
-                  className="w-4 h-4 text-accent"
+                  className="w-4 h-4 text-accent flex-shrink-0 mt-0.5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -98,11 +97,11 @@ export default function Footer() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                Abinet, Addis Ababa, Ethiopia
+                <span>Abinet, Addis Ababa, Ethiopia</span>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-start gap-2">
                 <svg
-                  className="w-4 h-4 text-accent"
+                  className="w-4 h-4 text-accent flex-shrink-0 mt-0.5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -114,11 +113,11 @@ export default function Footer() {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
-                0952521621
+                <span>0952521621</span>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-start gap-2">
                 <svg
-                  className="w-4 h-4 text-accent"
+                  className="w-4 h-4 text-accent flex-shrink-0 mt-0.5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -130,15 +129,15 @@ export default function Footer() {
                     d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                Mon-Sun: 7AM - 10PM
+                <span>Mon-Sun: 7AM - 10PM</span>
               </li>
             </ul>
           </motion.div>
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-border-light flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-text-muted text-sm">
+        <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-border-light flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+          <p className="text-text-muted text-xs sm:text-sm">
             © {new Date().getFullYear()} Abro Coffee. All rights reserved.
           </p>
           <div className="flex items-center gap-4">

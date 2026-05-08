@@ -19,7 +19,7 @@ export default function GallerySection() {
 
   const scroll = (direction) => {
     if (scrollRef.current) {
-      const scrollAmount = 400;
+      const scrollAmount = 300;
       scrollRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -28,7 +28,7 @@ export default function GallerySection() {
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-bg-primary">
+    <section className="py-12 sm:py-20 lg:py-28 bg-bg-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Gallery"
@@ -39,7 +39,7 @@ export default function GallerySection() {
           {/* Scroll Container */}
           <div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scroll-smooth pb-4 scrollbar-hide"
+            className="flex gap-3 sm:gap-6 overflow-x-auto scroll-smooth pb-4 scrollbar-hide"
           >
             {galleryImages.map((image, index) => (
               <motion.div
@@ -48,7 +48,7 @@ export default function GallerySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="flex-shrink-0 w-96 h-80 relative overflow-hidden rounded-xl group/image cursor-pointer"
+                className="flex-shrink-0 w-56 sm:w-72 md:w-96 h-48 sm:h-64 lg:h-80 relative overflow-hidden rounded-lg sm:rounded-xl group/image cursor-pointer shadow-theme hover:shadow-2xl transition-all duration-300"
                 onClick={() => setSelectedImage(image)}
               >
                 <img
@@ -56,30 +56,30 @@ export default function GallerySection() {
                   alt={image.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover/image:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <p className="text-white font-medium text-sm">{image.alt}</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex items-end p-3 sm:p-4">
+                  <p className="text-white font-medium text-xs sm:text-sm">{image.alt}</p>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Navigation Buttons */}
+          {/* Navigation Buttons - Hidden on Mobile */}
           <button
             onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-accent hover:bg-accent/90 text-white p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 -translate-x-6"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-accent hover:bg-accent/90 text-white p-2 sm:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 -translate-x-4 sm:-translate-x-6 hidden sm:block"
             aria-label="Scroll left"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 sm:w-6 h-5 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
 
           <button
             onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-accent hover:bg-accent/90 text-white p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 translate-x-6"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-accent hover:bg-accent/90 text-white p-2 sm:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 translate-x-4 sm:translate-x-6 hidden sm:block"
             aria-label="Scroll right"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 sm:w-6 h-5 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
@@ -93,13 +93,13 @@ export default function GallerySection() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => setSelectedImage(null)}
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
         >
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="relative w-full h-auto max-w-4xl max-h-[80vh]"
+            className="relative w-full h-auto max-w-4xl max-h-[85vh] sm:max-h-[80vh]"
             onClick={(e) => e.stopPropagation()}
           >
             <img
@@ -111,7 +111,7 @@ export default function GallerySection() {
             {/* Close Button */}
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute -top-12 right-0 text-white hover:text-accent transition-colors text-4xl font-bold"
+              className="absolute -top-10 sm:-top-12 right-0 text-white hover:text-accent transition-colors text-3xl sm:text-4xl font-bold"
               aria-label="Close modal"
             >
               ✕

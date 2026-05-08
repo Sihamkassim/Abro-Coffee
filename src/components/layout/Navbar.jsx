@@ -37,26 +37,25 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-1 sm:gap-3">
             <img
               src="/Abro Logo.png"
               alt="Abro Coffee"
-              className="h-12 w-auto"
+              className="h-10 sm:h-12 w-auto"
             />
-          
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-sm font-medium transition-colors duration-300 ${
+                className={`text-xs sm:text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 ${
                   location.pathname === link.to
-                    ? "text-accent"
+                    ? "text-accent border-b-2 border-accent"
                     : "text-text-primary hover:text-accent"
                 }`}
               >
@@ -65,7 +64,7 @@ export default function Navbar() {
             ))}
             <Link
               to="/about#contact"
-              className="px-5 py-2 bg-button text-button-text rounded-lg font-medium hover:bg-button-hover transition-colors duration-300"
+              className="px-4 sm:px-5 py-2 bg-button text-button-text rounded-lg font-medium hover:bg-button-hover hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 text-xs sm:text-sm"
             >
               Contact Us
             </Link>
@@ -74,7 +73,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-text-primary"
+            className="md:hidden p-1.5 text-text-primary hover:text-accent transition-colors"
             aria-label="Toggle menu"
           >
             <svg
@@ -111,16 +110,16 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-bg-primary border-t border-border-theme"
+            className="md:hidden bg-bg-primary border-t border-border-theme shadow-lg"
           >
-            <nav className="flex flex-col px-4 py-4 gap-2">
+            <nav className="flex flex-col px-4 py-3 gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`py-3 px-4 rounded-lg font-medium transition-colors ${
+                  className={`py-3 px-4 rounded-lg font-medium transition-all duration-300 text-sm ${
                     location.pathname === link.to
-                      ? "bg-accent/10 text-accent"
+                      ? "bg-accent/10 text-accent shadow-sm"
                       : "text-text-primary hover:bg-bg-secondary"
                   }`}
                 >
@@ -129,7 +128,7 @@ export default function Navbar() {
               ))}
               <Link
                 to="/about#contact"
-                className="mt-2 py-3 px-4 bg-button text-button-text rounded-lg font-medium text-center"
+                className="mt-3 py-3 px-4 bg-button text-button-text rounded-lg font-medium text-center text-sm hover:bg-button-hover transition-all duration-300"
               >
                 Contact Us
               </Link>

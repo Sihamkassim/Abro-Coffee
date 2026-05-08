@@ -7,27 +7,30 @@ export default function SectionTitle({ title, subtitle, centered = true }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className={`mb-12 ${centered ? "text-center" : ""}`}
+      className={`mb-8 sm:mb-12 lg:mb-16 ${centered ? "text-center" : ""}`}
     >
-      <div className="flex items-center justify-center gap-4 mb-4">
+      <div className="flex items-center justify-center gap-2 sm:gap-4 mb-3 sm:mb-4">
         <img
           src="/Brown line.png"
           alt=""
-          className="h-2 w-auto opacity-60"
+          className="h-1 sm:h-2 w-auto opacity-60"
         />
         <img
           src="/abro title.png"
           alt={title}
-          className="h-8 w-auto"
+          className="h-6 sm:h-8 w-auto"
         />
         <img
           src="/Brown line.png"
           alt=""
-          className="h-2 w-auto opacity-60 transform rotate-180"
+          className="h-1 sm:h-2 w-auto opacity-60 transform rotate-180"
         />
       </div>
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-2 sm:mb-4 tracking-tight">
+        {title}
+      </h2>
       {subtitle && (
-        <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+        <p className="text-text-secondary text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
           {subtitle}
         </p>
       )}
