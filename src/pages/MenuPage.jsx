@@ -286,6 +286,17 @@ export default function MenuPage() {
 
                   {/* Menu Items Content */}
                   <div className="relative z-20">
+                    {/* Category Title */}
+                    <motion.h2
+                      initial={{ opacity: 0, y: -10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4 }}
+                      className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary text-center mb-8 sm:mb-10 tracking-tight"
+                    >
+                      {category?.title}
+                    </motion.h2>
+
                     {isTabbed ? (
                       // For Hot/Cold Drinks - Two Column Layout with Divider
                       <div className="flex gap-4 sm:gap-8 relative">
