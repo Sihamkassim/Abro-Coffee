@@ -19,76 +19,82 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-bg-primary">
-      {/* Hero */}
-      <section className="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden rounded-b-3xl">
-        {/* Hero Section Background - Ultimate Background (z-0) */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="absolute inset-0 z-0"
-        >
-          <img
-            src="/hero section background.png"
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
+      {/* Hero - Rounded Container Design */}
+      <section className="relative py-4 sm:py-6 lg:py-8 bg-bg-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-[16/9] sm:aspect-[21/9] max-h-[500px]"
+          >
+            {/* Background Image */}
+            <img
+              src="/about page hero.png"
+              alt="About Abro Coffee"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
 
-        {/* Serving Image Overlay (z-10) */}
-        <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="absolute right-0 top-0 h-full w-[40%] z-10 hidden lg:block"
-        >
-          <img
-            src="/serving.png"
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#A3B18A]/60 via-[#A3B18A]/30 to-transparent" />
 
-        {/* Content */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-          <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="mb-8"
-            >
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-button mb-6 tracking-tight">
-                About Us
-              </h1>
-            </motion.div>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-lg sm:text-xl text-button/90 mb-6 max-w-lg leading-relaxed"
-            >
-              We invite you to experience Abro Coffee Shop – a space where quality coffee, meaningful moments, and warm hospitality come together in a modern Ethiopian atmosphere.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg text-button/80 max-w-lg"
-            >
-              A place designed for connection, comfort, and everyday inspiration.
-            </motion.p>
-          </div>
+            {/* Text Overlay */}
+            <div className="absolute inset-0 flex flex-col justify-center p-6 sm:p-10 lg:p-16">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                {/* <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-none tracking-tight">
+                  <span className="block">ABOUT</span>
+                  <span className="block text-[#3A5A40]">ABRO</span>
+                </h1> */}
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </section>
+
+      {/* Intro Text Section */}
+      <section className="py-8 sm:py-12 lg:py-16 bg-bg-primary">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#3A5A40] mb-4 sm:mb-6"
+          >
+            We invite you to experience<br />Abro Coffee Shop
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-text-secondary text-sm sm:text-base leading-relaxed mb-6 sm:mb-8"
+          >
+            A space where quality coffee, meaningful moments, and warm hospitality come together in a modern Ethiopian atmosphere. A place designed for connection, comfort, and everyday inspiration.
+          </motion.p>
+          <motion.a
+            href="#gallery"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="inline-block bg-[#A3B18A] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium text-sm sm:text-base hover:bg-[#8B9A76] transition-colors"
+          >
+            OUR GALLERY
+          </motion.a>
+        </div>
+      </section>
+      {/* Gallery Section */}
+      <GallerySection />
 
       {/* Team Section */}
       <TeamSection />
 
-      {/* Gallery Section */}
-      <GallerySection />
+      
 
       {/* Contact Section */}
       <section id="contact" className="py-20 lg:py-28 bg-bg-secondary">

@@ -142,7 +142,7 @@ export default function MenuPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 sm:mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-12 sm:mb-16">
             {menuCategories.map((cat, index) => (
               <motion.div
                 key={cat.id}
@@ -150,17 +150,34 @@ export default function MenuPage() {
                   setSelectedCategory(cat.id);
                   setActiveTab("hotDrinks");
                 }}
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.05 }}
                 className="cursor-pointer h-full"
               >
-                <MenuCard
-                  title={cat.title}
-                  description={cat.description}
-                  image={cat.image}
-                  to="#"
-                  delay={index * 0.1}
-                  isSelected={selectedCategory === cat.id}
-                />
+                <div
+                  className={`group block bg-bg-card rounded-2xl overflow-hidden shadow-theme hover:shadow-2xl transition-all duration-300 border-2 h-full flex flex-col ${
+                    selectedCategory === cat.id ? "border-accent shadow-lg" : "border-transparent hover:border-accent/50"
+                  }`}
+                >
+                  <div className="relative h-32 sm:h-40 overflow-hidden bg-gradient-to-br from-accent/10 to-accent/5">
+                    <img
+                      src={cat.image}
+                      alt={cat.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                  <div className="p-3 sm:p-4 flex flex-col flex-grow">
+                    <h3 className="text-base sm:text-lg font-bold text-text-primary mb-1 sm:mb-2 group-hover:text-accent transition-colors line-clamp-1">
+                      {cat.title}
+                    </h3>
+                    <p className="text-text-secondary text-xs sm:text-sm leading-tight line-clamp-1 flex-grow">
+                      {cat.description}
+                    </p>
+                    <div className="mt-2 inline-block px-2.5 py-1 bg-accent/10 rounded-full group-hover:bg-accent/20 transition-colors duration-300">
+                      <p className="text-xs font-semibold text-accent">SELECT</p>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -381,25 +398,25 @@ export default function MenuPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="mt-12 sm:mt-16 bg-accent rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-center"
+                className="mt-10 sm:mt-12 lg:mt-16 bg-accent rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 text-center"
               >
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-button mb-4 sm:mb-6">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-button mb-4 sm:mb-5">
                   {contactInfo.servicesText}
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 mb-6 sm:mb-8">
-                  <div className="bg-white/10 rounded-lg sm:rounded-xl p-4 sm:p-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 mb-5 sm:mb-6">
+                  <div className="bg-white/10 rounded-lg sm:rounded-xl p-3 sm:p-5">
                     <p className="text-button font-semibold mb-2 text-xs sm:text-sm">
                       Delivery
                     </p>
-                    <p className="text-xl sm:text-2xl font-bold text-button">
+                    <p className="text-lg sm:text-xl font-bold text-button">
                       {contactInfo.delivery}
                     </p>
                   </div>
-                  <div className="bg-white/10 rounded-lg sm:rounded-xl p-4 sm:p-6">
+                  <div className="bg-white/10 rounded-lg sm:rounded-xl p-3 sm:p-5">
                     <p className="text-button font-semibold mb-2 text-xs sm:text-sm">
                       Pre-Order
                     </p>
-                    <p className="text-xl sm:text-2xl font-bold text-button">
+                    <p className="text-lg sm:text-xl font-bold text-button">
                       {contactInfo.preorder}
                     </p>
                   </div>
