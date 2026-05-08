@@ -59,17 +59,17 @@ export default function MenuPage() {
 
         {/* Menu Image Overlay (z-10) */}
         <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="absolute right-0 top-0 h-full w-[90%] z-10 hidden lg:block"
-        >
-          <img
-            src="/menu hero.png"
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
+  initial={{ opacity: 0, x: 100 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8 }}
+  className="absolute right-0 top-0 h-full w-[40%] z-10 hidden lg:block"
+>
+  <img
+    src="/menu hero.png"
+    alt="Menu Hero"
+    className="w-full h-full object-contain" // Changed from object-cover
+  />
+</motion.div>
 
         {/* Content */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">

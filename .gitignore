@@ -6,10 +6,8 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-/public/inspiration and design/**
-
-/public/Abro services/**
-/public/**/!(*.html|*.css|*.js|*.png|*.jpg|*.jpeg|*.gif|*.svg|*.ico|*.json) 
+/public/inspiration and design/
+/public/Abro services/ 
 node_modules
 dist
 dist-ssr
