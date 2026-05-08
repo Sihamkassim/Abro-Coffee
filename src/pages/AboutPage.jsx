@@ -20,13 +20,13 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-bg-primary">
       {/* Hero - Rounded Container Design */}
-      <section className="relative py-4 sm:py-6 lg:py-8 bg-bg-primary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-2 sm:py-4 lg:py-6 bg-bg-primary">
+        <div className="mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-[16/9] sm:aspect-[21/9] max-h-[500px]"
+            className="relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-[4/3] sm:aspect-[16/9]"
           >
             {/* Background Image */}
             <img
@@ -35,22 +35,6 @@ export default function AboutPage() {
               className="absolute inset-0 w-full h-full object-cover"
             />
 
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#A3B18A]/60 via-[#A3B18A]/30 to-transparent" />
-
-            {/* Text Overlay */}
-            <div className="absolute inset-0 flex flex-col justify-center p-6 sm:p-10 lg:p-16">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                {/* <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-none tracking-tight">
-                  <span className="block">ABOUT</span>
-                  <span className="block text-[#3A5A40]">ABRO</span>
-                </h1> */}
-              </motion.div>
-            </div>
           </motion.div>
         </div>
       </section>
