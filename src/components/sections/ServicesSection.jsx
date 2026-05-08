@@ -43,7 +43,7 @@ export default function ServicesSection() {
         </motion.div>
 
         {/* Services Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
@@ -53,20 +53,20 @@ export default function ServicesSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <Link to={service.to}>
-                <div className="group relative bg-accent rounded-3xl p-8 min-h-96 flex flex-col justify-between overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-2xl hover:scale-105">
+                <div className="group relative bg-accent rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 min-h-80 sm:min-h-96 flex flex-col justify-between overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-2xl hover:scale-105">
                   {/* Background Effect on Hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-accent via-accent to-accent/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
 
                   {/* Image Container */}
                   <motion.div
-                    className="flex-1 flex items-center justify-center mb-6"
+                    className="flex-1 flex items-center justify-center mb-4 sm:mb-6"
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.3 }}
                   >
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="max-h-56 w-auto object-contain filter drop-shadow-lg group-hover:drop-shadow-xl transition-all duration-500"
+                      className="max-h-40 sm:max-h-56 w-auto object-contain filter drop-shadow-lg group-hover:drop-shadow-xl transition-all duration-500"
                     />
                   </motion.div>
 
@@ -77,7 +77,7 @@ export default function ServicesSection() {
                     transition={{ delay: index * 0.1 + 0.3 }}
                     className="text-center"
                   >
-                    <h3 className="text-2xl font-bold text-button mb-6 group-hover:text-white transition-colors duration-300">
+                    <h3 className="text-lg sm:text-2xl font-bold text-button mb-3 sm:mb-6 group-hover:text-white transition-colors duration-300">
                       {service.title}
                     </h3>
 
@@ -85,7 +85,7 @@ export default function ServicesSection() {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="inline-block px-8 py-3 bg-button text-white font-bold rounded-lg hover:bg-button-hover transition-all duration-300 transform group-hover:translate-y-0 translate-y-2"
+                      className="inline-block px-5 sm:px-8 py-2 sm:py-3 bg-button text-white font-bold text-sm sm:text-base rounded-lg hover:bg-button-hover transition-all duration-300 transform group-hover:translate-y-0 translate-y-2"
                     >
                       EXPLORE
                     </motion.button>

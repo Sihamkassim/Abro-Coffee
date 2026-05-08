@@ -40,22 +40,22 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-6 sm:mb-8"
+            className="mb-6 sm:mb-8 overflow-hidden"
           >
-            <div className="flex flex-wrap items-baseline gap-x-2 sm:gap-x-3">
-              <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-button tracking-tight">
+            <div className="flex flex-wrap items-baseline gap-x-1 sm:gap-x-2 md:gap-x-3">
+              <span className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-button tracking-tight">
                 WELCOME
               </span>
-              <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-button">,</span>
+              <span className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-light text-button">,</span>
             </div>
-            <div className="flex items-center gap-2 sm:gap-3 mt-1">
-              <span className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-button tracking-tight italic">
+            <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3 mt-1 overflow-hidden">
+              <span className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-button tracking-tight italic">
                 ABRO
               </span>
               <img
                 src="/Abro Logo.png"
                 alt=""
-                className="h-10 sm:h-14 md:h-16 lg:h-20 w-auto"
+                className="h-8 sm:h-12 md:h-16 lg:h-20 w-auto flex-shrink-0"
               />
             </div>
           </motion.div>

@@ -105,7 +105,7 @@ export default function MenuPreview() {
           {/* Left Arrow */}
           <button
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-button hover:bg-button-hover text-button-text flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 -ml-2 sm:-ml-6 lg:-ml-8"
+            className="absolute left-2 sm:left-0 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-button hover:bg-button-hover text-button-text flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 sm:-ml-6 lg:-ml-8 hidden sm:flex"
             aria-label="Previous category"
           >
             <svg
@@ -126,7 +126,7 @@ export default function MenuPreview() {
           {/* Right Arrow */}
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-button hover:bg-button-hover text-button-text flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 -mr-2 sm:-mr-6 lg:-mr-8"
+            className="absolute right-2 sm:right-0 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-button hover:bg-button-hover text-button-text flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 sm:-mr-6 lg:-mr-8 hidden sm:flex"
             aria-label="Next category"
           >
             <svg
@@ -151,7 +151,7 @@ export default function MenuPreview() {
           </button>
 
           {/* Main Content Area */}
-          <div className="bg-bg-primary rounded-3xl p-4 sm:p-6 lg:p-10 min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] flex flex-col justify-center">
+          <div className="bg-bg-primary rounded-2xl sm:rounded-3xl p-3 sm:p-6 lg:p-10 min-h-[380px] sm:min-h-[500px] lg:min-h-[600px] flex flex-col justify-center overflow-hidden">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={currentIndex}
@@ -169,21 +169,21 @@ export default function MenuPreview() {
                 </h3>
 
                 {/* Items + Center Image Layout */}
-                <div className="flex items-center justify-between w-full max-w-4xl gap-2 sm:gap-4 lg:gap-8">
+                <div className="flex items-center justify-between w-full max-w-4xl gap-1 sm:gap-3 lg:gap-8 px-2 sm:px-0">
                   {/* Left Items */}
-                  <div className="flex flex-col gap-3 sm:gap-4 lg:gap-6">
+                  <div className="flex flex-col gap-2 sm:gap-3 lg:gap-6 hidden sm:flex">
                     {currentCategory.leftItems.map((item, idx) => (
                       <motion.div
                         key={item.name}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.1 }}
-                        className="bg-button text-button-text px-3 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 rounded-lg sm:rounded-xl text-center min-w-[100px] sm:min-w-[140px] lg:min-w-[180px]"
+                        className="bg-button text-button-text px-2 sm:px-6 lg:px-8 py-1.5 sm:py-3 lg:py-4 rounded-lg sm:rounded-xl text-center min-w-[80px] sm:min-w-[140px] lg:min-w-[180px]"
                       >
-                        <p className="font-bold text-xs sm:text-sm lg:text-base">
+                        <p className="font-bold text-[10px] sm:text-sm lg:text-base leading-tight">
                           {item.name}
                         </p>
-                        <p className="text-[10px] sm:text-xs lg:text-sm opacity-80 mt-0.5">
+                        <p className="text-[8px] sm:text-xs lg:text-sm opacity-80 mt-0">
                           {item.subtext}
                         </p>
                       </motion.div>
@@ -200,24 +200,24 @@ export default function MenuPreview() {
                     <img
                       src={currentCategory.centerImage}
                       alt={currentCategory.title}
-                      className="w-40 h-40 sm:w-64 sm:h-64 lg:w-80 lg:h-80 object-contain drop-shadow-2xl"
+                      className="w-32 h-32 sm:w-56 sm:h-56 lg:w-80 lg:h-80 object-contain drop-shadow-2xl"
                     />
                   </motion.div>
 
                   {/* Right Items */}
-                  <div className="flex flex-col gap-3 sm:gap-4 lg:gap-6">
+                  <div className="flex flex-col gap-2 sm:gap-3 lg:gap-6 hidden sm:flex">
                     {currentCategory.rightItems.map((item, idx) => (
                       <motion.div
                         key={item.name}
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.1 }}
-                        className="bg-button text-button-text px-3 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 rounded-lg sm:rounded-xl text-center min-w-[100px] sm:min-w-[140px] lg:min-w-[180px]"
+                        className="bg-button text-button-text px-2 sm:px-6 lg:px-8 py-1.5 sm:py-3 lg:py-4 rounded-lg sm:rounded-xl text-center min-w-[80px] sm:min-w-[140px] lg:min-w-[180px]"
                       >
-                        <p className="font-bold text-xs sm:text-sm lg:text-base">
+                        <p className="font-bold text-[10px] sm:text-sm lg:text-base leading-tight">
                           {item.name}
                         </p>
-                        <p className="text-[10px] sm:text-xs lg:text-sm opacity-80 mt-0.5">
+                        <p className="text-[8px] sm:text-xs lg:text-sm opacity-80 mt-0">
                           {item.subtext}
                         </p>
                       </motion.div>
