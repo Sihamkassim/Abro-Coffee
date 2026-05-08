@@ -4,13 +4,14 @@ import { useRef, useState } from "react";
 
 const galleryImages = [
   { src: "/Gallery/Gallery.png", alt: "Abro Coffee Interior" },
-  { src: "/Gallery/gallery (1).png", alt: "Coffee Shop Ambiance" },
+ 
   { src: "/Gallery/gallery (2).png", alt: "Cafe Seating" },
   { src: "/Gallery/gallery (3).png", alt: "Interior Design" },
   { src: "/Gallery/gallery (4).png", alt: "Coffee Preparation" },
   { src: "/Gallery/gallery (5).png", alt: "Dining Experience" },
   { src: "/Gallery/gallery (6).png", alt: "Gallery View" },
   { src: "/Gallery/gallery (7).png", alt: "Abro Atmosphere" },
+   { src: "/Gallery/gallery (1).png", alt: "Coffee Shop Ambiance" }
 ];
 
 export default function GallerySection() {
