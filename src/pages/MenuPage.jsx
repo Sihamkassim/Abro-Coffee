@@ -62,7 +62,7 @@ export default function MenuPage() {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="absolute right-0 top-0 h-full w-[40%] z-10 hidden lg:block"
+          className="absolute right-0 top-0 h-full w-[90%] z-10 hidden lg:block"
         >
           <img
             src="/menu hero.png"
