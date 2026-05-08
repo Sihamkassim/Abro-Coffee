@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Mode - Coffee Shop Theme */
+  
+  --color-bg-primary: #F8F2E1;
+  --color-bg-secondary: #EDE6D3;
+  --color-bg-card: #FFFFFF;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #4A4A4A;
+  --color-text-muted: #7A7A7A;
+  --color-accent: #A2AC93;
+  --color-accent-hover: #8F997F;
+  --color-button: #415622;
+  --color-button-hover: #344A1B;
+  --color-button-text: #F8F2E1;
+  --color-border: #D4C9B0;
+  --color-border-light: #E8E0CC;
+  --color-shadow: rgba(65, 86, 34, 0.1);
+}
+
+.dark {
+  /* Dark Mode - Coffee Shop Theme */
+  --color-bg-primary: #1A1D14;
+  --color-bg-secondary: #252A1E;
+  --color-bg-card: #2F3528;
+  --color-text-primary: #F8F2E1;
+  --color-text-secondary: #C4BCA8;
+  --color-text-muted: #9A9385;
+  --color-accent: #A2AC93;
+  --color-accent-hover: #B5BEA8;
+  --color-button: #F8F2E1;
+  --color-button-hover: #E8E2D1;
+  --color-button-text: #415622;
+  --color-border: #415622;
+  --color-border-light: #4A5A2E;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
