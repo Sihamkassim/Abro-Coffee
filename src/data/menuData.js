@@ -214,7 +214,7 @@ export const menuItems = {
     },
   ],
 
-  "ethiopian-traditional": [
+  "Ertib": [
     {
       id: "et-1",
       nameEn: "Normal Erteb",
