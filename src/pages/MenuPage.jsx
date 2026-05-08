@@ -174,39 +174,41 @@ export default function MenuPage() {
               transition={{ duration: 0.5 }}
               key={selectedCategory}
             >
-              {/* Tabs for Hot/Cold Drinks */}
+              {/* Hot/Cold Drinks Header with Icons */}
               {isTabbed && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="flex gap-3 sm:gap-4 mb-8 justify-center flex-wrap"
+                  className="flex items-center justify-center gap-4 sm:gap-8 mb-6 sm:mb-8"
                 >
-                  {hasHotDrinks && (
-                    <button
-                      onClick={() => setActiveTab("hotDrinks")}
-                      className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-bold text-sm sm:text-lg transition-all duration-300 ${
-                        activeTab === "hotDrinks"
-                          ? "bg-button text-button-text shadow-lg"
-                          : "bg-bg-secondary text-text-primary hover:bg-accent/20"
-                      }`}
-                    >
-                      HOT DRINKS
-                    </button>
-                  )}
-                  {hasColdDrinks && (
-                    <button
-                      onClick={() => setActiveTab("coldDrinks")}
-                      className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-bold text-sm sm:text-lg transition-all duration-300 ${
-                        activeTab === "coldDrinks"
-                          ? "bg-button text-button-text shadow-lg"
-                          : "bg-bg-secondary text-text-primary hover:bg-accent/20"
-                      }`}
-                    >
-                      COLD DRINKS
-                    </button>
-                  )}
+                  {/* Cold Drinks Icon & Title */}
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <svg className="w-6 h-6 sm:w-8 sm:h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                      <circle cx="12" cy="6" r="1" fill="currentColor" />
+                    </svg>
+                    <span className="text-sm sm:text-lg font-bold text-text-primary tracking-wide">COLD DRINKS</span>
+                  </div>
+
+                  {/* Divider/Icon in middle */}
+                  <div className="flex items-center">
+                    <svg className="w-8 h-8 sm:w-10 sm:h-10 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 1v3M10 1v3M14 1v3" />
+                    </svg>
+                  </div>
+
+                  {/* Hot Drinks Icon & Title */}
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <svg className="w-6 h-6 sm:w-8 sm:h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 1v3M10 1v3M14 1v3" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 4s1-2 4-2 4 2 4 2" />
+                    </svg>
+                    <span className="text-sm sm:text-lg font-bold text-text-primary tracking-wide">HOT DRINKS</span>
+                  </div>
                 </motion.div>
               )}
 
@@ -268,29 +270,54 @@ export default function MenuPage() {
                   {/* Menu Items Content */}
                   <div className="relative z-20">
                     {isTabbed ? (
-                      // For Hot/Cold Drinks - show vertically stacked centered
-                      <div className="space-y-4 text-center">
-                        {displayedItems.map((item, index) => (
-                          <motion.div
-                            key={item.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: index * 0.05 }}
-                            className="group"
-                          >
-                            <div className="p-4 rounded-xl hover:bg-accent/10 transition-colors duration-300">
-                              <h3 className="text-lg font-bold text-text-primary mb-1 group-hover:text-accent transition-colors">
-                                {item.nameEn}
-                              </h3>
-                              {item.nameAm && (
-                                <p className="text-sm text-text-secondary font-semibold">
-                                  {item.nameAm}
-                                </p>
-                              )}
-                            </div>
-                          </motion.div>
-                        ))}
+                      // For Hot/Cold Drinks - Two Column Layout with Divider
+                      <div className="flex gap-4 sm:gap-8 relative">
+                        {/* Cold Drinks Column */}
+                        <div className="flex-1 text-left">
+                          <div className="space-y-2 sm:space-y-3">
+                            {items.coldDrinks?.map((item, index) => (
+                              <motion.div
+                                key={item.id}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.4, delay: index * 0.05 }}
+                                className="group"
+                              >
+                                <div className="py-2 px-2 sm:px-4 rounded-lg hover:bg-accent/10 transition-colors duration-300">
+                                  <p className="text-sm sm:text-base font-medium text-text-primary group-hover:text-accent transition-colors">
+                                    {item.nameEn} <span className="text-text-secondary/70">/ {item.nameAm}</span>
+                                  </p>
+                                </div>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Vertical Divider */}
+                        <div className="w-px bg-accent/30 self-stretch mx-2"></div>
+
+                        {/* Hot Drinks Column */}
+                        <div className="flex-1 text-left">
+                          <div className="space-y-2 sm:space-y-3">
+                            {items.hotDrinks?.map((item, index) => (
+                              <motion.div
+                                key={item.id}
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.4, delay: index * 0.05 }}
+                                className="group"
+                              >
+                                <div className="py-2 px-2 sm:px-4 rounded-lg hover:bg-accent/10 transition-colors duration-300">
+                                  <p className="text-sm sm:text-base font-medium text-text-primary group-hover:text-accent transition-colors">
+                                    {item.nameEn} <span className="text-text-secondary/70">/ {item.nameAm}</span>
+                                  </p>
+                                </div>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     ) : (
                       // For other categories - show vertically stacked centered
